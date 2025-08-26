@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Air Max</title>
+    <!-- css link -->
+     <link rel="stylesheet" href="style.css">
+    <!-- icon links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+   
+  </head>
+  <body>
+    <div class="container">
+      <!-- navbar -->
+      <nav>
+        <img src="./assets/icons8-nike.svg" alt="logo" />
+        <ul id="navlist">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#contactus">Contact Us</a></li>
+        </ul>
+        <div class="menubar" id="menubtn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+<!-- main section -->
+      <section id="main">
+        <!-- left-top -->
+        <div class="left-top">
+          <h1>Air Max</h1>
+          <h3>NIKE AIR MAX 90</h3>
+        </div>
+
+        <!-- left-down -->
+        <div class="left-down">
+          <h2>$99</h2>
+          <p>
+            "Nothing as fly, nothing as comfortable, nothing as proven—the Nike
+            Air Max 90 stays true to its roots with the iconic Waffle sole,
+            stitched overlays and classic TPU accents."
+          </p>
+          <button>Add to cart</button>
+        </div>
+
+        <!-- right -->
+        <div class="right">
+          <div class="shoe-wrapper">
+            <img src="assets/Nike-Shoe.png" alt="Nike shoes" />
+            <div class="shadow"></div>
+            <div class="same" id="cir-1"></div>
+            <div class="same" id="cir-2"></div>
+            <div class="same" id="cir-3"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- script-js -->
+  <script>
+        let menubtn = document.querySelector("#menubtn");
+        let navlist = document.querySelector("#navlist");
+        menubtn.addEventListener("click", () => {
+            navlist.classList.toggle("show");
+        });
+    </script>
+
+  </body>
+</html>
