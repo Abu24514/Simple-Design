@@ -27,3 +27,5 @@ It features a stylish UI with smooth hover effects, a responsive navbar, and int
 - GitHub: [Abu24514](https://github.com/Abu24514)
 
 ---
+## 🌍 Live Demo
+👉 [View Project](https://abu24514.github.io/Simple-Design/)
