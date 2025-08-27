@@ -27,13 +27,13 @@ body {
 
 /*  nav bar  */
 nav {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
   /* Smaller padding for mobile */
   height: 60px;
+  position: relative;
 }
 
 nav img {
@@ -43,26 +43,26 @@ nav img {
 
 nav ul {
   background-color: rgba(27, 27, 27, 0.964);
-  position: fixed;
-  top: 60px;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 100%;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   list-style: none;
   text-align: center;
   overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-   transform: translateY(-100%) scale(0.95);
- transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%) scale(0.95);
+  transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 100;
 }
 
 nav ul.show {
-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1);
   opacity: 1;
-   pointer-events: auto;
-
+  pointer-events: auto;
 }
 
 nav ul li {
@@ -177,7 +177,6 @@ nav .menubar i {
   transition: transform 0.5s ease;
 }
 
-
 /* responsive circles with % positioning */
 #cir-1 {
   /* top-circle  */
@@ -187,7 +186,7 @@ nav .menubar i {
   left: 40%;
 }
 .shoe-wrapper:hover #cir-1 {
-    transform: translateY(-18px) scale(1.1); 
+  transform: translateY(-18px) scale(1.1);
 }
 
 #cir-2 {
@@ -211,7 +210,7 @@ nav .menubar i {
   z-index: 11;
 }
 .shoe-wrapper:hover #cir-3 {
-  transform: translateY(20px) scale(1.2);  /* niche move */
+  transform: translateY(20px) scale(1.2); /* niche move */
 }
 
 /* left-down */
@@ -250,11 +249,26 @@ button {
   margin-top: 1.2rem;
   color: #111111;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all linear 0.5s;
 }
-
-button:hover {
-  background-color: royalblue;
-  color: #ffffff;
+button::after {
+  content: "";
+  background-color: #ffff;
+  position: absolute;
+  width: 6rem;
+  height: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all linear 0.5s;
+}
+button:hover::after {
+  transform: translate(-50%, -50%) scale(3);
 }
 
 @media (min-width: 600px) and (max-width: 1150px) {
@@ -293,18 +307,16 @@ button:hover {
     letter-spacing: 0.2rem;
     opacity: 0.6;
   }
-
 }
 
-@media (min-width:900px) {
-
-   nav {
+@media (min-width: 900px) {
+  nav {
     padding: 0 3rem;
     /* Larger padding for desktop */
   }
 
   nav ul {
-     pointer-events: auto;
+    pointer-events: auto;
     transform: none;
     opacity: 1;
     background-color: transparent;
@@ -338,7 +350,6 @@ button:hover {
   }
 }
 
-
 /* desktop */
 @media (min-width: 1151px) {
   #main {
@@ -353,7 +364,4 @@ button:hover {
     letter-spacing: 1rem;
     /* font-size: 10rem; */
   }
-
-
-
 }
