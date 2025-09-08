@@ -43,7 +43,7 @@ nav img {
 
 nav ul {
   background-color: rgba(27, 27, 27, 0.964);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   position: absolute;
   top: 100%;
   left: 0;
@@ -73,12 +73,22 @@ nav ul li a {
   text-decoration: none;
   color: aliceblue;
   font-size: 1.2rem;
-  display: block;
+  display: inline;
+  position: relative;
+}
+nav ul li a::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: #79b5e4;
+  width:0;
+  transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #79b5e4;
-  text-decoration: underline;
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 nav .menubar {
@@ -341,7 +351,8 @@ button:hover::after {
 
   nav ul li a {
     font-size: 1rem;
-    display: inline;
+    /* display: inline; */
+      display: block;
   }
 
   /* Hide menu button on desktop */
